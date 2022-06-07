@@ -1,0 +1,60 @@
+<View
+                blurOnSubmit={true}
+                style={styles.viewStyling}>
+                    <View style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flexGrow: 1,
+                        justifyContent: 'space-between',
+                    }}>
+                    <TextInput
+                        editable
+                        multiline
+                        numberOfLines={4}
+                        onChangeText={text => {
+                            this.setState({firstTextField: text})
+                        }
+                        }
+                        value={this.state.firstTextField}
+                        style={styles.textInputStyling}
+                    />
+                        <View style={{
+                            justifyContent: 'space-around',
+                            marginLeft: 10,
+                        }}>
+                            <TouchableOpacity
+                            onPress={this.clearText}>
+                                <Image
+                                    source={require('../assets/close.png')}
+                                    style={styles.imageStyles}
+                                />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Image
+                                    source={require('../assets/copy.png')}
+                                    style={styles.imageStyles}
+                                />
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={this.takeAndUploadPhotoAsync}>
+                                <Image
+                                    source={require('../assets/camera.png')}
+                                    style={styles.imageStyles}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+        </View>
+        <View
+            blurOnSubmit={true}
+            style={styles.viewStyling}>
+            <TextInput
+                editable
+                multiline
+                numberOfLines={4}
+                onChangeText={text => this.setState({secondTextField: text})}
+                value={this.state.secondTextField}
+                style={styles.textInputStyling2}
+            />
+        </View>
+        </>
